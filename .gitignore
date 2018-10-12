@@ -52,7 +52,6 @@ gen
 
 ### Test
 coverage/
-junit/
 
 ### Build
 dist/
