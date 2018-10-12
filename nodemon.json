@@ -1,0 +1,16 @@
+{
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "exec": "ts-node --project tsconfig.api.json",
+  "ext": "ts",
+  "ignore": [
+    "*.test*",
+    "src/web/"
+  ],
+  "restartable": "rs",
+  "verbose": true,
+  "watch": [
+    "src/api"
+  ]
+}
