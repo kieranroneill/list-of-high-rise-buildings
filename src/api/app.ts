@@ -1,3 +1,4 @@
+import { config } from 'dotenv';
 import * as Express from 'express';
 
 // Middlewares.
@@ -7,6 +8,12 @@ import * as Express from 'express';
 import { apiRoutes, webRoutes } from './router';
 
 const app = Express();
+
+//====================================================
+// Configuration.
+//====================================================
+
+config();
 
 //====================================================
 // Routes.
