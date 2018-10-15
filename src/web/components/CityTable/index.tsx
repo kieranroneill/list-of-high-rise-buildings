@@ -1,4 +1,4 @@
-import { History } from 'history';
+import { Location } from 'history';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
@@ -23,7 +23,7 @@ const Wrapper = styled.div`
 
 export interface Props {
     citiesState: CitiesState;
-    history: History;
+    location: Location;
 }
 
 export const CityTable: React.SFC<Props> = (props: Props) => (
@@ -37,7 +37,7 @@ export const CityTable: React.SFC<Props> = (props: Props) => (
                             <TableRow>
                                 <TableCell>
                                     <TableSortLabel
-                                        active={props.history.location.pathname === '/id'}
+                                        active={props.location.pathname === '/id'}
                                         direction={'asc'}
                                     >
                                         #
@@ -45,7 +45,7 @@ export const CityTable: React.SFC<Props> = (props: Props) => (
                                 </TableCell>
                                 <TableCell>
                                     <TableSortLabel
-                                        active={props.history.location.pathname === '/city'}
+                                        active={props.location.pathname === '/city'}
                                         direction={'asc'}
                                     >
                                         City
@@ -53,7 +53,7 @@ export const CityTable: React.SFC<Props> = (props: Props) => (
                                 </TableCell>
                                 <TableCell>
                                     <TableSortLabel
-                                        active={props.history.location.pathname === '/country'}
+                                        active={props.location.pathname === '/country'}
                                         direction={'asc'}
                                     >
                                         Country
@@ -61,7 +61,7 @@ export const CityTable: React.SFC<Props> = (props: Props) => (
                                 </TableCell>
                                 <TableCell>
                                     <TableSortLabel
-                                        active={props.history.location.pathname === '/all-buildings'}
+                                        active={props.location.pathname === '/all-buildings'}
                                         direction={'asc'}
                                     >
                                         All Buildings
@@ -69,7 +69,7 @@ export const CityTable: React.SFC<Props> = (props: Props) => (
                                 </TableCell>
                                 <TableCell>
                                     <TableSortLabel
-                                        active={props.history.location.pathname === '/100+'}
+                                        active={props.location.pathname === '/100+'}
                                         direction={'asc'}
                                     >
                                         100m+
@@ -77,7 +77,7 @@ export const CityTable: React.SFC<Props> = (props: Props) => (
                                 </TableCell>
                                 <TableCell>
                                     <TableSortLabel
-                                        active={props.history.location.pathname === '/150+'}
+                                        active={props.location.pathname === '/150+'}
                                         direction={'asc'}
                                     >
                                         150m+
@@ -85,7 +85,7 @@ export const CityTable: React.SFC<Props> = (props: Props) => (
                                 </TableCell>
                                 <TableCell>
                                     <TableSortLabel
-                                        active={props.history.location.pathname === '/200+'}
+                                        active={props.location.pathname === '/200+'}
                                         direction={'asc'}
                                     >
                                         200m+
@@ -93,7 +93,7 @@ export const CityTable: React.SFC<Props> = (props: Props) => (
                                 </TableCell>
                                 <TableCell>
                                     <TableSortLabel
-                                        active={props.history.location.pathname === '/300+'}
+                                        active={props.location.pathname === '/300+'}
                                         direction={'asc'}
                                     >
                                         300m+
@@ -105,7 +105,7 @@ export const CityTable: React.SFC<Props> = (props: Props) => (
                             {
                                 props.citiesState.cities
                                     .sort((a: City, b: City) => {
-                                        switch (props.history.location.pathname) {
+                                        switch (props.location.pathname) {
                                             case '/city':
                                                 return a.name.localeCompare(b.name);
                                             case '/country':

@@ -47,9 +47,15 @@ export interface Props {
 
 export class PageShell extends React.PureComponent<Props> {
     public componentDidMount(): void {
-        this.props.getCities();
+        this.props.getCities(); // Get the list of cities.
     }
 
+    /**
+     * Convenience function to create a button.
+     * @param label the label of the button.
+     * @param link the link to for the button.
+     * @returns {React.ReactNode} a material button.
+     */
     static getButton(label: string, link: string): React.ReactNode {
         return (
             <Button
@@ -71,7 +77,7 @@ export class PageShell extends React.PureComponent<Props> {
                 <Header>
                     <Typography
                         gutterBottom
-                        variant="display1"
+                        variant="h3"
                     >
                         List of high rise buildings
                     </Typography>
@@ -98,4 +104,9 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
     getCities: bindActionCreators(getCities, dispatch),
 });
 
-export default connect(undefined, mapDispatchToProps)(PageShell);
+export default connect(
+    undefined,
+    mapDispatchToProps,
+    undefined,
+    { pure: false } // Necessary to stop the react router update blocking.
+)(PageShell);

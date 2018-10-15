@@ -5,6 +5,7 @@ import { Store } from 'redux';
 import { injectGlobal } from 'styled-components';
 
 // Components.
+import { MuiThemeProvider } from '@material-ui/core/styles';
 import CityTable from './components/CityTable';
 import PageShell from './components/PageShell';
 
@@ -13,6 +14,7 @@ import { ApplicationState, configureStore } from './store';
 
 // Styles.
 import palette from './styles/palette';
+import { theme } from './styles/theme';
 
 injectGlobal`
   html,
@@ -67,56 +69,56 @@ injectGlobal`
 `;
 
 const store: Store<ApplicationState> = configureStore();
-const getRoute: (props: RouteComponentProps) => React.ReactNode = (props: RouteComponentProps) => {
-    return (<CityTable history={props.history} />);
-}
+const getRoute: (props: RouteComponentProps) => React.ReactNode = (props: RouteComponentProps) => <CityTable location={props.location} />;
 
 export const App: React.SFC = () => (
     <Provider store={store}>
-        <BrowserRouter>
-            <PageShell>
-                <Switch>
-                    <Route
-                        exact
-                        path='/100+'
-                        render={getRoute} />
-                    <Route
-                        exact
-                        path='/100+'
-                        render={getRoute} />
-                    <Route
-                        exact
-                        path='/150+'
-                        render={getRoute} />
-                    <Route
-                        exact
-                        path='/200+'
-                        render={getRoute} />
-                    <Route
-                        exact
-                        path='/300+'
-                        render={getRoute} />
-                    <Route
-                        exact
-                        path='/all-buildings'
-                        render={getRoute} />
-                    <Route
-                        exact
-                        path='/city'
-                        render={getRoute} />
-                    <Route
-                        exact
-                        path='/country'
-                        render={getRoute} />
-                    <Route
-                        exact
-                        path='/id'
-                        render={getRoute} />
-                    <Redirect
-                        from="*"
-                        to="/id" />
-                </Switch>
-            </PageShell>
-        </BrowserRouter>
+        <MuiThemeProvider theme={theme}>
+            <BrowserRouter>
+                <PageShell>
+                    <Switch>
+                        <Route
+                            exact
+                            path='/100+'
+                            render={getRoute} />
+                        <Route
+                            exact
+                            path='/100+'
+                            render={getRoute} />
+                        <Route
+                            exact
+                            path='/150+'
+                            render={getRoute} />
+                        <Route
+                            exact
+                            path='/200+'
+                            render={getRoute} />
+                        <Route
+                            exact
+                            path='/300+'
+                            render={getRoute} />
+                        <Route
+                            exact
+                            path='/all-buildings'
+                            render={getRoute} />
+                        <Route
+                            exact
+                            path='/city'
+                            render={getRoute} />
+                        <Route
+                            exact
+                            path='/country'
+                            render={getRoute} />
+                        <Route
+                            exact
+                            path='/id'
+                            render={getRoute} />
+                        <Redirect
+                            from="*"
+                            to="/id" />
+                    </Switch>
+                </PageShell>
+            </BrowserRouter>
+        </MuiThemeProvider>
     </Provider>
 );
