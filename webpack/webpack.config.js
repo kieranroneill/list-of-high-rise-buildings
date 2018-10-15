@@ -17,7 +17,7 @@ import {
 } from './common.config';
 
 export default {
-    devtool: false,
+    devtool: 'source-map',
 
     entry: {
         main: entry
@@ -66,5 +66,7 @@ export default {
 
     resolve: {
         extensions
-    }
+    },
+
+    stats: 'minimal',
 };

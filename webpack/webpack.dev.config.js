@@ -37,7 +37,7 @@ export default {
         }
     },
 
-    devtool: 'source-map',
+    devtool: 'eval-source-map',
 
     entry: [
         `webpack-dev-server/client?${localhost}:${webPort}`,
@@ -73,5 +73,7 @@ export default {
 
     resolve: {
         extensions
-    }
+    },
+
+    stats: 'verbose',
 };
