@@ -34,7 +34,7 @@ export default {
             cacheGroups: {
                 vendor: {
                     // Rule of thumb: add any vendor files that are > 50kb
-                    test: /react|react-dom|react-router-dom/,
+                    test: /axios|react|react-redux|react-dom|react-router-dom|redux|styled-components/,
                     chunks: 'initial',
                     name: 'vendor',
                     enforce: true
