@@ -10,9 +10,9 @@ import {
 } from 'path';
 
 // Routes.
-// import { CityRoute } from './routes/CityRoute';
-//
-// type Route = CityRoute;
+import { CityRoute } from './routes/CityRoute';
+
+type Route = CityRoute;
 
 export function webRoutes(app: Express): void {
     const rootPath: string = join(__dirname, '..', '..');
@@ -26,10 +26,10 @@ export function webRoutes(app: Express): void {
 }
 
 export function apiRoutes(app: Express): void {
-    // const routes: Array<Route> = [
-    //     new CityRoute(),
-    // ];
-    //
-    // // Set up api routes.
-    // routes.forEach((route: Route) => route.registerRoutes(app));
+    const routes: Array<Route> = [
+        new CityRoute(),
+    ];
+
+    // Set up api routes.
+    routes.forEach((route: Route) => route.registerRoutes(app));
 }
