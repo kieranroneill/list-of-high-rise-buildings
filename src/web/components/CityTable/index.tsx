@@ -1,3 +1,4 @@
+import { History } from 'history';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
@@ -17,12 +18,12 @@ import { ApplicationState } from '../../store';
 import { CitiesState } from '../../store/cities/types';
 
 const Wrapper = styled.div`
-  padding: 2rem;
+  padding: 0 2rem 2rem;
 `;
 
 export interface Props {
     citiesState: CitiesState;
-    orderBy?: '100m+' | '150m+' | '200m+' | '300m+';
+    history: History;
 }
 
 export const CityTable: React.SFC<Props> = (props: Props) => (
@@ -34,45 +35,66 @@ export const CityTable: React.SFC<Props> = (props: Props) => (
                     <Table>
                         <TableHead>
                             <TableRow>
-                                <TableCell>#</TableCell>
-                                <TableCell>City</TableCell>
-                                <TableCell>Country</TableCell>
                                 <TableCell>
                                     <TableSortLabel
-                                        active={!props.orderBy}
-                                        direction={'desc'}
+                                        active={props.history.location.pathname === '/id'}
+                                        direction={'asc'}
+                                    >
+                                        #
+                                    </TableSortLabel>
+                                </TableCell>
+                                <TableCell>
+                                    <TableSortLabel
+                                        active={props.history.location.pathname === '/city'}
+                                        direction={'asc'}
+                                    >
+                                        City
+                                    </TableSortLabel>
+                                </TableCell>
+                                <TableCell>
+                                    <TableSortLabel
+                                        active={props.history.location.pathname === '/country'}
+                                        direction={'asc'}
+                                    >
+                                        Country
+                                    </TableSortLabel>
+                                </TableCell>
+                                <TableCell>
+                                    <TableSortLabel
+                                        active={props.history.location.pathname === '/all-buildings'}
+                                        direction={'asc'}
                                     >
                                         All Buildings
                                     </TableSortLabel>
                                 </TableCell>
                                 <TableCell>
                                     <TableSortLabel
-                                        active={props.orderBy === '100m+'}
-                                        direction={'desc'}
+                                        active={props.history.location.pathname === '/100+'}
+                                        direction={'asc'}
                                     >
                                         100m+
                                     </TableSortLabel>
                                 </TableCell>
                                 <TableCell>
                                     <TableSortLabel
-                                        active={props.orderBy === '150m+'}
-                                        direction={'desc'}
+                                        active={props.history.location.pathname === '/150+'}
+                                        direction={'asc'}
                                     >
                                         150m+
                                     </TableSortLabel>
                                 </TableCell>
                                 <TableCell>
                                     <TableSortLabel
-                                        active={props.orderBy === '200m+'}
-                                        direction={'desc'}
+                                        active={props.history.location.pathname === '/200+'}
+                                        direction={'asc'}
                                     >
                                         200m+
                                     </TableSortLabel>
                                 </TableCell>
                                 <TableCell>
                                     <TableSortLabel
-                                        active={props.orderBy === '300m+'}
-                                        direction={'desc'}
+                                        active={props.history.location.pathname === '/300+'}
+                                        direction={'asc'}
                                     >
                                         300m+
                                     </TableSortLabel>
@@ -83,11 +105,24 @@ export const CityTable: React.SFC<Props> = (props: Props) => (
                             {
                                 props.citiesState.cities
                                     .sort((a: City, b: City) => {
-                                        if (!props.orderBy) {
-                                            return b.allBuildings - a.allBuildings; // Default to all buildings.
+                                        switch (props.history.location.pathname) {
+                                            case '/city':
+                                                return a.name.localeCompare(b.name);
+                                            case '/country':
+                                                return a.country.localeCompare(b.country);
+                                            case '/all-buildings':
+                                                return a.allBuildings - b.allBuildings;
+                                            case '/100+':
+                                                return a['100m+'] - b['100m+'];
+                                            case '/150+':
+                                                return a['150m+'] - b['150m+'];
+                                            case '/200+':
+                                                return a['200m+'] - b['200m+'];
+                                            case '/300+':
+                                                return a['300m+'] - b['300m+'];
+                                            default:
+                                                return a.id - b.id; // Default to city name.
                                         }
-
-                                        return b[props.orderBy] - a[props.orderBy];
                                     })
                                     .map((row: City) => (
                                         <TableRow key={row.name.replace(/[\s_]+/g, '-').toLowerCase()}>

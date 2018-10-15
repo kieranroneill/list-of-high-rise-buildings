@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, RouteComponentProps, Switch } from 'react-router-dom';
 import { Store } from 'redux';
 import { injectGlobal } from 'styled-components';
 
@@ -67,6 +67,9 @@ injectGlobal`
 `;
 
 const store: Store<ApplicationState> = configureStore();
+const getRoute: (props: RouteComponentProps) => React.ReactNode = (props: RouteComponentProps) => {
+    return (<CityTable history={props.history} />);
+}
 
 export const App: React.SFC = () => (
     <Provider store={store}>
@@ -75,11 +78,43 @@ export const App: React.SFC = () => (
                 <Switch>
                     <Route
                         exact
+                        path='/100+'
+                        render={getRoute} />
+                    <Route
+                        exact
+                        path='/100+'
+                        render={getRoute} />
+                    <Route
+                        exact
+                        path='/150+'
+                        render={getRoute} />
+                    <Route
+                        exact
+                        path='/200+'
+                        render={getRoute} />
+                    <Route
+                        exact
+                        path='/300+'
+                        render={getRoute} />
+                    <Route
+                        exact
+                        path='/all-buildings'
+                        render={getRoute} />
+                    <Route
+                        exact
                         path='/city'
-                        component={ CityTable } />
+                        render={getRoute} />
+                    <Route
+                        exact
+                        path='/country'
+                        render={getRoute} />
+                    <Route
+                        exact
+                        path='/id'
+                        render={getRoute} />
                     <Redirect
                         from="*"
-                        to="/city" />
+                        to="/id" />
                 </Switch>
             </PageShell>
         </BrowserRouter>
