@@ -15,7 +15,7 @@ export enum ApiActionTypes {
 export interface ApiErrorAction<Type> {
     type: Type;
     payload: {
-        error: string;
+        errors: string[];
     }
 }
 

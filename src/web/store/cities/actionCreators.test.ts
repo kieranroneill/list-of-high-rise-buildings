@@ -4,7 +4,6 @@ import { assert,  SinonStub, stub } from 'sinon';
 import * as apiActionCreators from '../api/actionCreators';
 import { getCities } from './actionsCreators';
 
-
 // Types.
 import { CitiesActionTypes } from './types';
 

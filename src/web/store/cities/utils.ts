@@ -4,7 +4,7 @@ import { CitiesState } from './types';
 export function getInitialState(): CitiesState {
     return {
         cities: [],
-        error: '',
+        errors: [],
         loading: false,
     };
 }

@@ -1,0 +1,209 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/web/components/CityTable <CityTable /> snapshots should display the table with values 1`] = `
+<styled.div>
+  <WithStyles(Paper)>
+    <WithStyles(Table)>
+      <WithStyles(TableHead)>
+        <WithStyles(TableRow)>
+          <WithStyles(TableCell)>
+            <WithStyles(TableSortLabel)
+              active={false}
+              direction="asc"
+            >
+              #
+            </WithStyles(TableSortLabel)>
+          </WithStyles(TableCell)>
+          <WithStyles(TableCell)>
+            <WithStyles(TableSortLabel)
+              active={false}
+              direction="asc"
+            >
+              City
+            </WithStyles(TableSortLabel)>
+          </WithStyles(TableCell)>
+          <WithStyles(TableCell)>
+            <WithStyles(TableSortLabel)
+              active={false}
+              direction="asc"
+            >
+              Country
+            </WithStyles(TableSortLabel)>
+          </WithStyles(TableCell)>
+          <WithStyles(TableCell)>
+            <WithStyles(TableSortLabel)
+              active={false}
+              direction="asc"
+            >
+              All Buildings
+            </WithStyles(TableSortLabel)>
+          </WithStyles(TableCell)>
+          <WithStyles(TableCell)>
+            <WithStyles(TableSortLabel)
+              active={false}
+              direction="asc"
+            >
+              100m+
+            </WithStyles(TableSortLabel)>
+          </WithStyles(TableCell)>
+          <WithStyles(TableCell)>
+            <WithStyles(TableSortLabel)
+              active={false}
+              direction="asc"
+            >
+              150m+
+            </WithStyles(TableSortLabel)>
+          </WithStyles(TableCell)>
+          <WithStyles(TableCell)>
+            <WithStyles(TableSortLabel)
+              active={false}
+              direction="asc"
+            >
+              200m+
+            </WithStyles(TableSortLabel)>
+          </WithStyles(TableCell)>
+          <WithStyles(TableCell)>
+            <WithStyles(TableSortLabel)
+              active={false}
+              direction="asc"
+            >
+              300m+
+            </WithStyles(TableSortLabel)>
+          </WithStyles(TableCell)>
+        </WithStyles(TableRow)>
+      </WithStyles(TableHead)>
+      <WithStyles(TableBody)>
+        <WithStyles(TableRow)
+          key="san-francisco"
+        >
+          <WithStyles(TableCell)
+            component="th"
+            scope="row"
+          >
+            44
+          </WithStyles(TableCell)>
+          <WithStyles(TableCell)>
+            San Francisco
+          </WithStyles(TableCell)>
+          <WithStyles(TableCell)>
+            United States
+          </WithStyles(TableCell)>
+          <WithStyles(TableCell)
+            numeric={true}
+          >
+            111
+          </WithStyles(TableCell)>
+          <WithStyles(TableCell)
+            numeric={true}
+          >
+            87
+          </WithStyles(TableCell)>
+          <WithStyles(TableCell)
+            numeric={true}
+          >
+            21
+          </WithStyles(TableCell)>
+          <WithStyles(TableCell)
+            numeric={true}
+          >
+            3
+          </WithStyles(TableCell)>
+          <WithStyles(TableCell)
+            numeric={true}
+          >
+            0
+          </WithStyles(TableCell)>
+        </WithStyles(TableRow)>
+      </WithStyles(TableBody)>
+    </WithStyles(Table)>
+  </WithStyles(Paper)>
+</styled.div>
+`;
+
+exports[`src/web/components/CityTable <CityTable /> snapshots should match the snapshot when the cities is loading 1`] = `
+<styled.div>
+  <WithStyles(Paper)>
+    <WithStyles(CircularProgress)
+      size={50}
+    />
+  </WithStyles(Paper)>
+</styled.div>
+`;
+
+exports[`src/web/components/CityTable <CityTable /> snapshots should match the snapshot with the default props 1`] = `
+<styled.div>
+  <WithStyles(Paper)>
+    <WithStyles(Table)>
+      <WithStyles(TableHead)>
+        <WithStyles(TableRow)>
+          <WithStyles(TableCell)>
+            <WithStyles(TableSortLabel)
+              active={false}
+              direction="asc"
+            >
+              #
+            </WithStyles(TableSortLabel)>
+          </WithStyles(TableCell)>
+          <WithStyles(TableCell)>
+            <WithStyles(TableSortLabel)
+              active={false}
+              direction="asc"
+            >
+              City
+            </WithStyles(TableSortLabel)>
+          </WithStyles(TableCell)>
+          <WithStyles(TableCell)>
+            <WithStyles(TableSortLabel)
+              active={false}
+              direction="asc"
+            >
+              Country
+            </WithStyles(TableSortLabel)>
+          </WithStyles(TableCell)>
+          <WithStyles(TableCell)>
+            <WithStyles(TableSortLabel)
+              active={false}
+              direction="asc"
+            >
+              All Buildings
+            </WithStyles(TableSortLabel)>
+          </WithStyles(TableCell)>
+          <WithStyles(TableCell)>
+            <WithStyles(TableSortLabel)
+              active={false}
+              direction="asc"
+            >
+              100m+
+            </WithStyles(TableSortLabel)>
+          </WithStyles(TableCell)>
+          <WithStyles(TableCell)>
+            <WithStyles(TableSortLabel)
+              active={false}
+              direction="asc"
+            >
+              150m+
+            </WithStyles(TableSortLabel)>
+          </WithStyles(TableCell)>
+          <WithStyles(TableCell)>
+            <WithStyles(TableSortLabel)
+              active={false}
+              direction="asc"
+            >
+              200m+
+            </WithStyles(TableSortLabel)>
+          </WithStyles(TableCell)>
+          <WithStyles(TableCell)>
+            <WithStyles(TableSortLabel)
+              active={false}
+              direction="asc"
+            >
+              300m+
+            </WithStyles(TableSortLabel)>
+          </WithStyles(TableCell)>
+        </WithStyles(TableRow)>
+      </WithStyles(TableHead)>
+      <WithStyles(TableBody) />
+    </WithStyles(Table)>
+  </WithStyles(Paper)>
+</styled.div>
+`;

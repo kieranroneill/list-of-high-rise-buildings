@@ -28,11 +28,11 @@ describe('store/cities/reducer', () => {
 
     describe('CitiesActionTypes.GetCitiesError', () => {
         it('should stop loading and set an error message', () => {
-            const error: string = 'BOOM!!!';
+            const errors: string[] = ['BOOM!!!'];
             const action: GetCitiesErrorAction = {
                 type: CitiesActionTypes.GetCitiesError,
                 payload: {
-                    error,
+                    errors,
                 },
             };
             let state: CitiesState;
@@ -41,7 +41,7 @@ describe('store/cities/reducer', () => {
 
             state = reducer(scope.initialState, action);
 
-            expect(state.error).toBe(error);
+            expect(state.errors).toEqual(errors);
             expect(state.loading).toBe(false);
         });
     });
@@ -89,7 +89,7 @@ describe('store/cities/reducer', () => {
             state = reducer(scope.initialState, action);
 
             expect(state.cities).toBe(expectedCities);
-            expect(state.error).toBe('');
+            expect(state.errors).toEqual([]);
             expect(state.loading).toBe(false);
         });
     });

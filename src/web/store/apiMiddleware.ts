@@ -1,16 +1,8 @@
 import axios, { AxiosResponse } from 'axios';
-import {
-    AnyAction,
-    Dispatch,
-    Middleware,
-} from 'redux';
+import { AnyAction, Dispatch, Middleware } from 'redux';
 
 // Types.
-import {
-    ApiActionTypes,
-    CallApiAction,
-    RequestAction
-} from './api/types';
+import { ApiActionTypes, CallApiAction, RequestAction } from './api/types';
 
 export function apiMiddleware(): Middleware {
     return ({ dispatch }) => {
@@ -44,11 +36,11 @@ export function apiMiddleware(): Middleware {
                     payload: response.data,
                     statusCode: response.status,
                 });
-            } catch (error) {
+            } catch (errors) {
                 // Dispatch an action to the reducer to notify an error.
                 dispatch({
                     payload: {
-                        error,
+                        errors,
                     },
                     type: requestAction.actionTypes[2],
                 });

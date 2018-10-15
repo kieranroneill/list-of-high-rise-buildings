@@ -5,6 +5,7 @@ import { join } from 'path';
 
 // Config.
 import { endpoints } from '../config/defaults';
+import { ServerErrors } from '../config/errors';
 
 // Exceptions.
 import RequestException from '../exceptions/RequestException';
@@ -28,7 +29,7 @@ export class CityRoute extends BaseRoute {
     private async getCities(request: Request, response: Response, next: NextFunction): Promise<void> {
         try {
             const data: any[] = await csv().fromFile(join(__dirname, '..', '..', 'data', 'cities.csv'));
-            const cities: City[] = data.map((data: any) => ({
+            const cities: City[] = data.map((data: any) => ({ // Convert to global City type.
                 '100m+': parseInt(data['100m+']),
                 '150m+': parseInt(data['150m+']),
                 '200m+': parseInt(data['200m+']),
@@ -43,7 +44,7 @@ export class CityRoute extends BaseRoute {
 
             response.json(cities);
         } catch (e) {
-            return this.handleError(next, new RequestException(INTERNAL_SERVER_ERROR, ['unable to get city data']));
+            return this.handleError(next, new RequestException(INTERNAL_SERVER_ERROR, [ServerErrors.UnknownError]));
         }
     }
 }

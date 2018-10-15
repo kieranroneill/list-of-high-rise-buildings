@@ -1,7 +1,7 @@
 export default class BaseException extends Error {
-    public errors: Array<string>;
+    public errors: string[];
 
-    constructor(errors: Array<string>) {
+    constructor(errors: string[]) {
         super();
 
         this.errors = errors;

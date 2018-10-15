@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/web/components/PageShell <PageShell /> snapshots should match the snapshot with the default props 1`] = `
+<styled.div>
+  <styled.div>
+    <WithStyles(Typography)
+      gutterBottom={true}
+      variant="h3"
+    >
+      List of high rise buildings
+    </WithStyles(Typography)>
+    <WithStyles(Paper)>
+      <styled.div>
+        <WithStyles(Button)
+          color="primary"
+          component={[Function]}
+          style={
+            Object {
+              "margin": "0.5rem",
+            }
+          }
+          variant="contained"
+        >
+          #
+        </WithStyles(Button)>
+        <WithStyles(Button)
+          color="primary"
+          component={[Function]}
+          style={
+            Object {
+              "margin": "0.5rem",
+            }
+          }
+          variant="contained"
+        >
+          City
+        </WithStyles(Button)>
+        <WithStyles(Button)
+          color="primary"
+          component={[Function]}
+          style={
+            Object {
+              "margin": "0.5rem",
+            }
+          }
+          variant="contained"
+        >
+          Country
+        </WithStyles(Button)>
+        <WithStyles(Button)
+          color="primary"
+          component={[Function]}
+          style={
+            Object {
+              "margin": "0.5rem",
+            }
+          }
+          variant="contained"
+        >
+          All Buildings
+        </WithStyles(Button)>
+        <WithStyles(Button)
+          color="primary"
+          component={[Function]}
+          style={
+            Object {
+              "margin": "0.5rem",
+            }
+          }
+          variant="contained"
+        >
+          100m+
+        </WithStyles(Button)>
+        <WithStyles(Button)
+          color="primary"
+          component={[Function]}
+          style={
+            Object {
+              "margin": "0.5rem",
+            }
+          }
+          variant="contained"
+        >
+          150m+
+        </WithStyles(Button)>
+        <WithStyles(Button)
+          color="primary"
+          component={[Function]}
+          style={
+            Object {
+              "margin": "0.5rem",
+            }
+          }
+          variant="contained"
+        >
+          200m+
+        </WithStyles(Button)>
+        <WithStyles(Button)
+          color="primary"
+          component={[Function]}
+          style={
+            Object {
+              "margin": "0.5rem",
+            }
+          }
+          variant="contained"
+        >
+          300m+
+        </WithStyles(Button)>
+      </styled.div>
+    </WithStyles(Paper)>
+  </styled.div>
+  <h1>
+    Hello human
+  </h1>
+</styled.div>
+`;

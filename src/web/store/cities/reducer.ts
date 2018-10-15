@@ -15,7 +15,7 @@ const reducer: Reducer<CitiesState, CitiesActions> = (state: CitiesState = getIn
         case CitiesActionTypes.GetCitiesError:
             return {
                 ...state,
-                error: action.payload.error,
+                errors: action.payload.errors,
                 loading: false,
             };
         case CitiesActionTypes.GetCitiesRequest:

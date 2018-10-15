@@ -42,7 +42,7 @@ export type CitiesActions = GetCitiesAction
 //====================================================
 
 export interface CitiesState {
-    error: string,
+    errors: string[],
     loading: boolean;
     cities: City[];
 }
