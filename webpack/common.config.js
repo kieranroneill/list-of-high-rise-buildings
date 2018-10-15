@@ -2,6 +2,8 @@ import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 import { join, resolve } from 'path';
 import webpack from 'webpack';
 
+const uriLimit = 65000;
+
 export const baseApiUrl = '/api';
 export const distPath = join(__dirname, '..', 'dist', 'web');
 export const srcPath = join(__dirname, '..', 'src', 'web');
@@ -40,6 +42,32 @@ export const rules = [
         loader: 'ts-loader',
         options: {
             configFile: join(__dirname, '..', 'tsconfig.web.json'),
+        }
+    },
+
+    // Assets.
+    {
+        test: /\.ttf/,
+        loader: 'url-loader',
+        options: {
+            limit: uriLimit,
+            mimeType: 'application/octet-stream'
+        }
+    },
+    {
+        test: /\.woff$/,
+        loader: 'url-loader',
+        options: {
+            limit: uriLimit,
+            mimeType: 'application/font-woff'
+        }
+    },
+    {
+        test: /\.woff2$/,
+        loader: 'url-loader',
+        options: {
+            limit: uriLimit,
+            mimeType: 'font/woff2'
         }
     },
 ];

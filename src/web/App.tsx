@@ -5,7 +5,7 @@ import { Store } from 'redux';
 import { injectGlobal } from 'styled-components';
 
 // Components.
-import { CityTable } from './components/CityTable';
+import CityTable from './components/CityTable';
 import PageShell from './components/PageShell';
 
 // Store.
