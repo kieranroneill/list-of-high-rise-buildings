@@ -1,8 +1,8 @@
 {
-  "name": "city-high-rise-list",
+  "name": "list-of-high-rise-buildings",
   "private": true,
   "version": "1.0.0",
-  "description": "Displays a list of high rise buildings of vaious cities.",
+  "description": "Displays a list of high rise buildings of various cities.",
   "main": "src/api/index.ts",
   "repository": {
     "type": "git",
