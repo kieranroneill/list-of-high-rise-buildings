@@ -1,5 +1,15 @@
 import * as React from 'react';
+import { Provider } from 'react-redux';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import { Store } from 'redux';
 import { injectGlobal } from 'styled-components';
+
+// Components.
+import { CityTable } from './components/CityTable';
+import PageShell from './components/PageShell';
+
+// Store.
+import { ApplicationState, configureStore } from './store';
 
 // Styles.
 import palette from './styles/palette';
@@ -56,6 +66,22 @@ injectGlobal`
   }
 `;
 
+const store: Store<ApplicationState> = configureStore();
+
 export const App: React.SFC = () => (
-    <h1>Hello human!</h1>
+    <Provider store={store}>
+        <BrowserRouter>
+            <PageShell>
+                <Switch>
+                    <Route
+                        exact
+                        path='/city'
+                        component={ CityTable } />
+                    <Redirect
+                        from="*"
+                        to="/city" />
+                </Switch>
+            </PageShell>
+        </BrowserRouter>
+    </Provider>
 );

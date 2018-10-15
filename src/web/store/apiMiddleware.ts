@@ -34,7 +34,7 @@ export function apiMiddleware(): Middleware {
                 response = await axios({
                     data: requestAction.body,
                     method: requestAction.method,
-                    url: `api/${requestAction.url}`,
+                    url: `/api${requestAction.url}`,
                     validateStatus: (status: number) => status >= 200 && status < 400,
                 });
 
