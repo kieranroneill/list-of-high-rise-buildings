@@ -27,7 +27,7 @@ export class CityRoute extends BaseRoute {
 
     private async getCities(request: Request, response: Response, next: NextFunction): Promise<void> {
         try {
-            const data: any[] = await csv().fromFile(join(__dirname, '..', 'data', 'cities.csv'));
+            const data: any[] = await csv().fromFile(join(__dirname, '..', '..', 'data', 'cities.csv'));
             const cities: City[] = data.map((data: any) => ({
                 '100m+': parseInt(data['100m+']),
                 '150m+': parseInt(data['150m+']),

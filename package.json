@@ -1,12 +1,12 @@
 {
-  "name": "city-list",
+  "name": "city-high-rise-list",
   "private": true,
   "version": "1.0.0",
-  "description": "Displays a list of cities.",
+  "description": "Displays a list of high rise buildings of vaious cities.",
   "main": "src/api/index.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kieranroneill/city-list.git"
+    "url": "https://github.com/kieranroneill/city-high-rise-list.git"
   },
   "license": "SEE LICENSE IN LICENSE.md",
   "engines": {
@@ -14,6 +14,7 @@
   },
   "scripts": {
     "postinstall": "(cp -n .env.example .env || true)",
+    "start": "./bin/start.sh",
     "start:dev": "concurrently \"nodemon src/api/index\" \"node -r babel-register node_modules/.bin/webpack-dev-server --config webpack/webpack.dev.config.js --progress\"",
     "test": "jest --config=test/jest.config.js"
   },
